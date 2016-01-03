@@ -1,0 +1,37 @@
+#!/usr/bin/python
+import sys
+
+# Problem Statement : Find the place of N queen in NxN chess box 
+# such they do not kill them selves 
+to_update = 10
+queen_pos = [-25,-25,-25,-25]
+def isvalid(raw,col):
+	global queen_pos
+	#print "checking validation for {0}, {1} and current queen {2}".format(raw,col,queen_pos)
+	for i in range(raw):
+		#print "inside for"
+		#print i,queen_pos[i],col
+		if queen_pos[i] ==col or (abs(i-raw) == abs(queen_pos[i]-col)):
+			return False
+	return True
+
+def printQueen(raw, col):
+	global queen_pos
+	for i in range(col):
+		#print "raw n col {0},{1} nd last: {2} before check".format(raw,i,col)
+		if isvalid(raw,i):
+			#print "raw n col {0},{1}".format(raw,i)
+			queen_pos.pop(raw)
+			queen_pos.insert(raw,i)
+			if raw == col-1:
+				print "placed queen {0}".format(queen_pos)
+				return
+			else:
+				printQueen(raw+1,col)
+
+printQueen(0,4)
+'''queen_pos = [0,-25,-25,-25]
+if isvalid(1,0):
+	print "yes"
+else:
+	print "no" '''
