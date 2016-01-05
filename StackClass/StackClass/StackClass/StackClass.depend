@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1451995292 source:e:\cpp tests\stackclass\stackclass\stacktest.cpp
+	"stack.h"
+	<iostream>
+
+1451985126 e:\cpp tests\stackclass\stackclass\stack.h
+
+1451987989 source:e:\cpp tests\stackclass\stackclass\stack.cpp
+	"stack.h"
+	<iostream>
+	<cstdio>
+
