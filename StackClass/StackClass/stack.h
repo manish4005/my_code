@@ -10,6 +10,7 @@ class stack
         bool push_to_stack(int);
         int pop_from_stack();
         void print_stack();
+        bool isempty();
 
 
     private:
