@@ -12,6 +12,7 @@ stack::stack(int size)
 
 stack::~stack()
 {
+    std::cout<<"call to destructor"<<std::endl;
     delete[] arr;
 }
 
@@ -25,7 +26,7 @@ int stack::pop_from_stack(){
   else{
     std::cout<<" Popped "<<arr[head]<<std::endl;
     head--;
-    return arr[head];
+    return arr[head+1];
 
   }
 
@@ -59,5 +60,14 @@ void stack::print_stack(){
         }
 
 }
+}
+
+bool stack::isempty(){
+
+    if(head == bottom)
+        return true;
+    else
+        return false;
+
 }
 
